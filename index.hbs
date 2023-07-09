@@ -5,21 +5,24 @@
         {{^is "paged"}}
             {{#foreach posts limit="1"}}
                 <article class="gh-latest gh-card {{post_class}}">
-                    <a class="gh-card-link" href="{{url}}">
+                    {{!-- <a class="gh-card-link" href="{{url}}"> --}}
                         <header class="gh-card-header">
                             <div class="gh-article-meta">
-                                <span class="gh-card-date">Latest — <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></span>
+                                {{!-- <span class="gh-card-date">Latest — <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></span> --}}
                             </div>
-                            <h2 class="gh-article-title gh-card-title">{{title}}</h2>
+                            {{!-- <h2 class="gh-article-title gh-card-title">{{title}}</h2> --}}
                         </header>
 
-                        <p class="gh-article-excerpt">{{excerpt}}</p>
-
+                        {{!-- <p class="gh-article-excerpt">{{excerpt}}</p> --}}
+                        <p class="gh-article-supertext">Hey,</p>
+                        <p class="gh-article-excerpt">I'm <b>Manu</b> <h22 style="font-size:2.1rem"> - an engineer, product owner & award travel geek. </h22> </p>
+                        <p class="gh-article-subtext">On this website, I write about <a style="font-weight:bold"  href="/tag/fintech/" >FinTech</a>, <a style="font-weight:bold" href="/tag/personal-finance/">Personal Finance</a>, <a style="font-weight:bold"  href="/tag/technology/">Technology</a>, <a style="font-weight:bold" href="/tag/travel/">Travel</a> & <a style="font-weight:bold" href="/tag/misc/">everything else</a>.</p>
+                            
                         <footer class="gh-card-meta">
-                            <span class="gh-card-duration">{{reading_time}}</span>
-                            {{#if @site.comments_enabled}}
+                            {{!-- <span class="gh-card-duration">{{reading_time}}</span> --}}
+{{!--                             {{#if @site.comments_enabled}}
                                 {{comment_count class="gh-card-comments"}}
-                            {{/if}}
+                            {{/if}} --}}
                             {{^has visibility="public"}}
                                 {{> icons/star}}
                             {{/has}}
@@ -31,11 +34,11 @@
 
         <div class="gh-wrapper">
             <section class="gh-section">
-                <h2 class="gh-section-title">More issues</h2>
+                <h2 class="gh-section-title">Latest Articles</h2>
 
                 <div class="gh-feed">
                     {{^is "paged"}}
-                        {{#foreach posts from="2"}}
+                        {{#foreach posts from="1"}}
                             {{> loop}}
                         {{/foreach}}
                     {{else}}
@@ -46,10 +49,10 @@
                 </div>
 
                 {{#match posts.length "=" 1}}
-                    Additional issues will be published soon.
+                    Additional articles will be published soon.
                 {{/match}}
 
-                <button class="gh-loadmore gh-btn">Load more issues</button>
+                <button class="gh-loadmore gh-btn">Load more articles</button>
             </section>
 
             <aside class="gh-sidebar">
@@ -63,10 +66,12 @@
 
                         <section class="gh-about-wrapper">
                             <h3 class="gh-about-title">{{@site.title}}</h3>
-
-                            {{#if @site.description}}
+                            <p class="gh-about-description">On this site, I write about my interests & showcase tools / services adds value to our everyday life.</p>
+                            {{!--
+                                {{#if @site.description}}
                                 <p class="gh-about-description">{{@site.description}}</p>
-                            {{/if}}
+                                {{/if}} 
+                            --}}
                         </section>
                     </div>
 
@@ -74,12 +79,12 @@
                         {{^if @member.paid}}
                             <div class="gh-signup">
                                 {{^if @member}}
-                                    <p class="gh-signup-description">Sign up now to get access to the library of members-only issues.</p>
+                                    <p class="gh-signup-description">Sign up now to get access to the library of members-only content.</p>
 
                                     <a class="gh-subscribe-input" href="#/portal/signup" data-portal="signup">
                                         <div class="gh-subscribe-input-text">
                                             {{> icons/email}}
-                                            jamie@example.com
+                                            name@domain.com
                                         </div>
                                         <div class="gh-subscribe-input-btn">Subscribe</div>
                                     </a>
@@ -117,7 +122,7 @@
                                 <a class="gh-topic-item" href="{{url}}">
                                     <h3 class="gh-topic-name">{{name}}</h3>
                                     <span class="gh-topic-count">
-                                        {{plural count.posts empty="0 issues" singular="% issue" plural="% issues"}}
+                                        {{plural count.posts empty="0 article" singular="% article" plural="% articles"}}
                                     </span>
                                 </a>
                             {{/foreach}}
