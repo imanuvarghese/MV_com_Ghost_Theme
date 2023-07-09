@@ -706,6 +706,8 @@
 
     .gh-head-menu {
         height: 56px;
+        margin-right: 16px !important;
+        justify-content: right;
     }
 
     .gh-head-menu::before,
@@ -716,7 +718,7 @@
         width: 100%;
         height: 1px;
         content: "";
-        background-color: var(--color-light-gray);
+        /* background-color: var(--color-light-gray); */
     }
 
     .gh-head-menu::after {
