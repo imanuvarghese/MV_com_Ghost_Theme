@@ -18,8 +18,8 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: install # will run `yarn install` command
-      - run: npm ci
-      - run: npm run build
+      #- run: npm ci
+      #- run: npm run build
       - name: Deploy Ghost Theme
         uses: TryGhost/action-deploy-theme@v1
         with:
