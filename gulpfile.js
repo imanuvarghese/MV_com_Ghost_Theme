@@ -78,10 +78,10 @@ function zipper(done) {
     ], handleError(done));
 }
 
-const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
-const cssWatcher = () => watch('assets/css/**/*.css', css);
-const jsWatcher = () => watch('assets/js/**/*.js', js);
-const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
+//const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
+//const cssWatcher = () => watch('assets/css/**/*.css', css);
+//const jsWatcher = () => watch('assets/js/**/*.js', js);
+//const watcher = parallel(hbsWatcher, cssWatcher, jsWatcher);
 const build = series(css, js);
 
 exports.build = build;
