@@ -7,6 +7,105 @@
     --color-primary-text: var(--color-black);
     --color-darker-gray: var(--color-black);
     --head-nav-gap: 3.2rem;
+    --color-background-white:#F6F4F2; 
+    --color-subscribe-background:#212124;
+
+}
+
+.gh-head-subscribe{
+    margin-left: 0.5rem;
+    /* margin-left: var(--head-nav-gap); */
+}
+
+/* Create two equal columns that floats next to each other */
+.contact-col-2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.contact-col-3 {
+    float: left;
+    width: 32%;
+    padding: 10px;
+}
+
+    
+/* Clear floats after the columns */
+.contact-row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+    
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+    .contact-col-2,.contact-col-3 {
+            width: 100%;
+    }
+}
+
+.error-content {
+    padding: 14vw 4vw 6vw;
+}
+
+.error-message {
+    padding-bottom: 10vw;
+    text-align: center;
+}
+
+.error-code {
+    margin: 0;
+    color: var(--ghost-accent-color);
+    font-size: 12vw;
+    line-height: 1em;
+    letter-spacing: -5px;
+}
+
+.error-description {
+    margin: 0;
+    color: var(--color-darker-gray);
+    font-size: 3.2rem;
+    line-height: 1.3em;
+    font-weight: 400;
+}
+
+.error-link {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 2rem;
+}
+
+
+.gh-site {
+    background-color: var(--color-background-white);
+}
+.gh-head {
+    background-color: var(--color-background-white);
+}
+.gh-foot {
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+}
+
+.icon {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}
+.gh-subscribe-secondary-description {
+    margin-top: 2.2rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.gh-btn {
+    padding-right: 1.6rem;
+    padding-left: 1.6rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    border-radius: 6px;
 }
 
 .tag-template .gh-main,
@@ -16,15 +115,24 @@
 
 .gh-head-menu,
 .gh-head-actions {
-    font-size: 1.2rem;
-    font-weight: 500;
+    font-size: 1.4rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.01em;
 }
+.gh-head-btn {
+    font-weight: 700;
+}
+
+.gh-head-btn svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 0.6rem;
+}
 
 .gh-latest {
-    margin-top: 4rem;
-    margin-bottom: 12rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
 }
 
 .gh-latest .gh-card-meta {
@@ -104,8 +212,13 @@
 .gh-card-date {
     color: var(--ghost-accent-color);
 }
+.gh-card-meta-wrapper {
+    display: inline-flex;
+    align-items: center;
+}
 
 .gh-card-meta svg {
+    
     position: relative;
     top: -1px;
     margin-left: 0.6rem;
@@ -253,9 +366,9 @@
 }
 
 .gh-subscribe {
-    padding: 7.2rem 0;
-    margin: 12rem 0 8rem;
-    background-color: var(--ghost-accent-color);
+    padding: 6.2rem 0;
+    margin: 5rem 0 3rem;
+    background-color: var(--color-subscribe-background);
 }
 
 .gh-subscribe-inner {
@@ -277,7 +390,7 @@
 
 .gh-subscribe-description {
     margin-top: 2rem;
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     line-height: 1.4;
     color: #fff;
 }
@@ -350,19 +463,31 @@
 }
 
 .gh-article-title {
-    font-size: 7.4rem;
+    font-size: 5rem;
     font-weight: 600;
     line-height: 1;
 }
-
+.gh-article-supertext {
+    max-width: 980px;
+    margin-top: 0rem;
+    font-size: 2.8rem;
+    line-height: 1.35;
+    color: var(--color-darker-gray);
+}
 .gh-article-excerpt {
-    max-width: 920px;
+    max-width: 980px;
     margin-top: 1.6rem;
     font-size: 2.8rem;
     line-height: 1.35;
     color: var(--color-darker-gray);
 }
-
+.gh-article-subtext {
+    max-width: 980px;
+    margin-top: 1.2rem;
+    font-size: 2rem;
+    line-height: 1.35;
+    color: var(--color-darker-gray);
+}
 .gh-article-footer {
     padding-top: 3.2rem;
     margin-top: 8rem;
@@ -482,12 +607,15 @@
 }
 
 .gh-author-facebook {
-    margin-left: 0.8rem;
+    margin-left: 1rem;
 }
 
 @media (max-width: 767px) {
+    .gh-head-subscribe{
+        margin-left: 0;
+    }
     .gh-latest {
-        margin-bottom: 8rem;
+        margin-bottom: 5rem;
     }
 
     .gh-wrapper {
@@ -564,6 +692,37 @@
     }
 }
 
+@media (min-width: 992px) {
+    .gh-head-inner {
+        row-gap: 0 !important;
+        padding: 0;
+    }
+
+    .gh-head-brand {
+        display: flex;
+        align-items: center;
+        height: 80px;
+    }
+
+    .gh-head-menu {
+        height: 56px;
+    }
+
+    .gh-head-menu::before,
+    .gh-head-menu::after {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        content: "";
+        background-color: var(--color-light-gray);
+    }
+
+    .gh-head-menu::after {
+        top: 136px;
+    }
+}
 @supports (-moz-appearance: none) {
     .gh-topic-count {
         padding-bottom: 0.5rem;
