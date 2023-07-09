@@ -14,6 +14,10 @@ jobs:
         with:
           node-version: '18.x'
           cache: 'npm'
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install # will run `yarn install` command
       - run: npm ci
       - run: npm run build
       - name: Deploy Ghost Theme
