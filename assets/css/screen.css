@@ -1,4 +1,4 @@
-@import "@tryghost/shared-theme-assets/assets/css/v1/screen.css";
+@import "shared/assets/css/screen.css";
 @import "fonts.css";
 
 :root {
