@@ -709,6 +709,10 @@
         margin-right: 16px !important;
         justify-content: right;
     }
+    
+    .gh-main{
+         padding-top: 5rem;
+    }
 
     .gh-head-menu::before,
     .gh-head-menu::after {
